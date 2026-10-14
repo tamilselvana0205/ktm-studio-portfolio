@@ -1,55 +1,176 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>KTM STUDIO | Video Editing Portfolio</title>
+<meta name="theme-color" content="#080d18">
+<meta name="description" content="KTM STUDIO — Video editing portfolio featuring reels, cinematic edits and creative video work.">
+<title>KTM STUDIO | Creative Video Editor</title>
 <style>
+:root{--bg:#080d18;--panel:#101827;--gold:#d9b66b;--white:#f8f5ed;--muted:#a5adbd}
 *{box-sizing:border-box}
-body{margin:0;background:#07111f;color:#f5f2e9;font-family:Arial,sans-serif}
-header{text-align:center;padding:48px 18px;background:linear-gradient(140deg,#07111f,#17243a);border-bottom:1px solid #b99a54}
-.logo{color:#d8b765;font-size:34px;font-weight:800;letter-spacing:5px}
-header p{color:#d4d5dc;line-height:1.6}
-h2{color:#d8b765}
-main{max-width:850px;margin:auto;padding:24px 18px}
-.intro{text-align:center;line-height:1.8}
-.videos{display:grid;grid-template-columns:1fr;gap:18px;margin-top:24px}
-.video{border:1px solid #806b3d;border-radius:14px;padding:20px;background:#101c2d}
-.video h3{margin-top:0;color:#e3c477}
-.video a{display:inline-block;margin-top:8px;padding:12px 16px;border-radius:7px;background:#c4a45b;color:#07111f;text-decoration:none;font-weight:bold}
-.note{font-size:13px;color:#c3c8d2;line-height:1.6}
-footer{text-align:center;padding:28px 12px;color:#d8b765;border-top:1px solid #806b3d}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Helvetica,sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1080px,90%);margin:auto}
+nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0;border-bottom:1px solid #ffffff16}
+.brand{font-weight:900;letter-spacing:3px;color:var(--gold);font-size:21px}
+.navlinks{display:flex;gap:22px;font-size:13px;color:#d7dbe3}
+.navlinks a:hover{color:var(--gold)}
+.hero{padding:82px 0 75px;background:radial-gradient(ellipse at 80% 20%,#26334b66,transparent 55%)}
+.eyebrow{color:var(--gold);letter-spacing:4px;font-size:11px;font-weight:bold}
+h1{font-size:clamp(43px,9vw,86px);line-height:1.03;letter-spacing:-3px;margin:22px 0}
+h1 span{color:var(--gold)}
+.hero p{color:var(--muted);max-width:540px;font-size:16px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:13px 20px;border-radius:5px;font-weight:bold;font-size:13px}
+.primary{background:var(--gold);color:#111522}
+.secondary{border:1px solid #ffffff38}
+section{padding:60px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:16px;margin-bottom:25px}
+h2{font-size:clamp(27px,5vw,40px);margin:5px 0}
+.sub{color:var(--muted);font-size:14px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:17px}
+.card{overflow:hidden;background:var(--panel);border:1px solid #ffffff17;border-radius:10px;transition:transform .2s,border-color .2s}
+.card:hover{transform:translateY(-4px);border-color:var(--gold)}
+.cover{min-height:190px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;background:linear-gradient(145deg,#1d2a40,#111827 65%,#3c3020)}
+.cover .number{font-size:12px;letter-spacing:2px;color:var(--gold)}
+.play{width:48px;height:48px;border:1px solid #d9b66b99;border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:20px}
+.cover strong{font-size:24px;line-height:1.2}
+.card-body{padding:18px}
+.card-body h3{margin:0 0 5px;font-size:18px}
+.card-body p{color:var(--muted);font-size:13px;margin:0 0 15px}
+.watch{color:var(--gold);font-size:13px;font-weight:bold}
+.about{background:linear-gradient(120deg,#101827,#0b1220);border-top:1px solid #ffffff12;border-bottom:1px solid #ffffff12}
+.aboutbox{max-width:720px}
+.aboutbox p{color:var(--muted)}
+.tags{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.tag{border:1px solid #d9b66b55;border-radius:30px;padding:7px 13px;color:#e7d3a3;font-size:12px}
+.contactbox{padding:32px;border:1px solid #d9b66b55;border-radius:12px;background:linear-gradient(135deg,#121c2d,#0c1320)}
+footer{border-top:1px solid #ffffff18;padding:24px 0;color:var(--muted);font-size:12px}
+.footrow{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:680px){
+.navlinks{gap:12px;font-size:11px}
+.brand{font-size:17px;letter-spacing:2px}
+nav{gap:10px}
+.hero{padding:60px 0}
+.grid{grid-template-columns:1fr}
+.cover{min-height:175px}
+section{padding:46px 0}
+.section-head{display:block}
+.contactbox{padding:23px}
+}
 </style>
 </head>
 <body>
-<header>
-<div class="logo">KTM STUDIO</div>
-<p>VIDEO EDITING PORTFOLIO<br>Creative Reels • Cinematic Edits • Status Videos</p>
+<div class="wrap">
+<nav>
+<a class="brand" href="#">KTM STUDIO</a>
+<div class="navlinks">
+<a href="#work">Work</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
+<header class="hero">
+<div class="eyebrow">CREATIVE VIDEO EDITING</div>
+<h1>YOUR STORY.<br><span>MY EDIT.</span></h1>
+<p>Creative reels, cinematic visuals and memorable edits. Welcome to KTM STUDIO — a portfolio of my selected video work.</p>
+<div class="actions">
+<a class="btn primary" href="#work">EXPLORE MY WORK ↘</a>
+<a class="btn secondary" href="https://www.instagram.com/ktm__studio/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+</div>
 </header>
-<main>
-<section class="intro">
-<h2>My Editing Works</h2>
-<p>Welcome to KTM STUDIO. Explore my selected video edits below.</p>
-</section>
-<section class="videos">
-<div class="video">
-<h3>01 — Thiruvizha</h3>
+
+<section id="work">
+<div class="section-head">
+<div>
+<div class="eyebrow">SELECTED PROJECTS</div>
+<h2>Featured Work.</h2>
+</div>
+<div class="sub">03 selected edits</div>
+</div>
+<div class="grid">
+
+<article class="card">
+<div class="cover">
+<div class="number">PROJECT 01 / FESTIVAL</div>
+<div class="play">▶</div>
+<strong>Thiruvizha<br>Edition</strong>
+</div>
+<div class="card-body">
+<h3>Thiruvizha</h3>
 <p>Festival video edit</p>
-<a href="https://www.instagram.com/reel/C-2kQHNyNrC/" target="_blank" rel="noopener">Watch on Instagram ↗</a>
+<a class="watch" href="https://www.instagram.com/reel/C-2kQHNyNrC/" target="_blank" rel="noopener">WATCH REEL ↗</a>
 </div>
-<div class="video">
-<h3>02 — Beach Reels</h3>
+</article>
+
+<article class="card">
+<div class="cover">
+<div class="number">PROJECT 02 / LIFESTYLE</div>
+<div class="play">▶</div>
+<strong>Beach<br>Reels</strong>
+</div>
+<div class="card-body">
+<h3>Beach Reels</h3>
 <p>Beach reel edit</p>
-<a href="https://www.instagram.com/reel/DKvXYUnBeSU/" target="_blank" rel="noopener">Watch on Instagram ↗</a>
+<a class="watch" href="https://www.instagram.com/reel/DKvXYUnBeSU/" target="_blank" rel="noopener">WATCH REEL ↗</a>
 </div>
-<div class="video">
-<h3>03 — Status Video</h3>
+</article>
+
+<article class="card">
+<div class="cover">
+<div class="number">PROJECT 03 / STATUS</div>
+<div class="play">▶</div>
+<strong>Status<br>Video</strong>
+</div>
+<div class="card-body">
+<h3>Status Video</h3>
 <p>Status video edit</p>
-<a href="https://www.instagram.com/reel/DW6Vie4E4TK/" target="_blank" rel="noopener">Watch on Instagram ↗</a>
+<a class="watch" href="https://www.instagram.com/reel/DW6Vie4E4TK/" target="_blank" rel="noopener">WATCH REEL ↗</a>
+</div>
+</article>
+
+</div>
+<p class="sub">Select “Watch Reel” to open the original video on Instagram. These project covers are designed graphics, not video thumbnails.</p>
+</section>
+</div>
+
+<section class="about" id="about">
+<div class="wrap aboutbox">
+<div class="eyebrow">THE CREATIVE BEHIND THE EDITS</div>
+<h2>About KTM STUDIO.</h2>
+<p>KTM STUDIO is my creative space for video editing and visual storytelling. This portfolio showcases selected edits and gives you a place to explore my work.</p>
+<div class="tags">
+<span class="tag">Reels Editing</span>
+<span class="tag">Cinematic Edits</span>
+<span class="tag">Status Videos</span>
+<span class="tag">Creative Visuals</span>
+</div>
 </div>
 </section>
-<p class="note">Videos open on Instagram. Playback depends on Instagram access and account privacy.</p>
-</main>
-<footer>© KTM STUDIO • Video Editing Portfolio</footer>
+
+<div class="wrap">
+<section id="contact">
+<div class="contactbox">
+<div class="eyebrow">LET'S CONNECT</div>
+<h2>Have a video in mind?</h2>
+<p class="sub">Visit my Instagram profile to explore my edits and get in touch about a project.</p>
+<div class="actions">
+<a class="btn primary" href="https://www.instagram.com/ktm__studio/" target="_blank" rel="noopener">CONTACT ON INSTAGRAM ↗</a>
+<a class="btn secondary" href="https://www.instagram.com/tamilselvana0205/" target="_blank" rel="noopener">PERSONAL PROFILE ↗</a>
+</div>
+</div>
+</section>
+</div>
+
+<footer>
+<div class="wrap footrow">
+<span>© KTM STUDIO</span>
+<span>CRAFTED WITH CREATIVITY · VIDEO EDITING PORTFOLIO</span>
+</div>
+</footer>
 </body>
 </html>
